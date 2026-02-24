@@ -76,7 +76,12 @@ First, install the **Fira Code Nerd Font**:
 brew install --cask font-fira-code-nerd-font
 ```
 
-After installing the font, configure your terminal emulator to use `FiraCode Nerd Font`.
+Also you can use the **JetBrains Mono Nerd Font** instead (especially for IntelliJ IDEs):
+```bash
+brew install --cask font-jetbrains-mono-nerd-font
+```
+
+After installing the font, configure your terminal emulator to use `FiraCode Nerd Font` or `JetBrains Mono Nerd Font`.
 
 First, install the Powerlevel10k theme:
 
