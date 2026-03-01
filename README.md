@@ -15,6 +15,8 @@ Before setting up these configurations, ensure you have the following installed:
 *   **thefuck** (Optional): A magnificent app which corrects your previous console command.
 *   **nvm** (Optional): Node Version Manager.
 *   **SDKMAN** (Optional): A tool for managing parallel versions of multiple Software Development Kits.
+*   **LM Studio** (Optional): CLI for managing and running LLMs locally.
+*   **Pear** (Optional): A tool for building and sharing desktop applications.
 
 ## Installation
 
@@ -139,7 +141,9 @@ This configuration includes support for the following tools and features:
     *   `bat` for better `cat` (via `zsh-bat`).
     *   `you-should-use` for learning aliases.
     *   `lazydocker` support via alias `lzd`.
-*   **Architecture Support**: Aliases for switching between `amd64` and `arm64` on Apple Silicon.
+    *   `LM Studio` support (automatic path detection).
+    *   `Pear` support (automatic path detection).
+*   **Architecture Support**: Aliases for switching between `amd64` and `arm64` on macOS (Apple Silicon).
 *   **Cloud & Infrastructure**: Plugins for `aws`, `terraform`, and `kubectl` (in comments).
 *   **Nerd Font Support**: Automatic detection of Nerd Fonts with fallback to emoji-based or plain text compatibility modes.
 *   **SSH Integration**: Support for transferring Nerd Font configuration to remote servers via SSH.
