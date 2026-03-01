@@ -163,11 +163,16 @@ export VISUAL=nvim
 alias amd64='exec arch -x86_64 zsh'
 alias arm64='exec arch -arm64e zsh'
 
+# Check if a command exists
+function command_exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
 # Brew compatible with both architectures
 if [ "$(arch)" = "arm64" ]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    [ -x /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 else
-    eval "$(/usr/local/bin/brew shellenv)"
+    [ -x /usr/local/bin/brew ] && eval "$(/usr/local/bin/brew shellenv)"
 fi
 
 # nvm script
@@ -179,7 +184,7 @@ export NVM_DIR="$HOME/.nvm"
 fpath=($fpath "$HOME/.zfunctions")
 
 # Enable the-fuck
-eval $(thefuck --alias)
+command_exists thefuck && eval $(thefuck --alias)
 
 # All colors
 function all_colors() {
@@ -196,15 +201,13 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
 
 # Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
-
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:$HOME/.cache/lm-studio/bin"
 
 # PyEnv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - --no-rehash)"
+command_exists pyenv && eval "$(pyenv init - --no-rehash)"
 
 # Detects whether the current session is running
 # inside a graphical terminal or a text console.
