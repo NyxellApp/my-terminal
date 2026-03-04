@@ -39,10 +39,10 @@ Link the configuration file:
 
 ```bash
 # Backup existing .zshrc if it exists
-mv ~/.zshrc ~/.zshrc.bak
+[ -f ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.bak
 
 # Create symbolic link
-ln -s ~/repos/jorge-aranda/my-terminal/.zshrc ~/.zshrc
+ln -sf ~/repos/jorge-aranda/my-terminal/.zshrc ~/.zshrc
 ```
 
 #### Oh My Zsh Configuration
@@ -50,6 +50,7 @@ ln -s ~/repos/jorge-aranda/my-terminal/.zshrc ~/.zshrc
 Install required plugins:
 ```bash
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
+mkdir -p "$ZSH_CUSTOM/plugins"
 
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions \
   "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
@@ -93,23 +94,25 @@ If you choose not to install a Nerd Font, the system will automatically fall bac
 First, install the Powerlevel10k theme:
 
 ```bash
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
+mkdir -p "$ZSH_CUSTOM/themes"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM/themes/powerlevel10k"
 ```
 
 Then, link the configuration file:
 
 ```bash
 # Backup existing .p10k.zsh if it exists
-mv ~/.p10k.zsh ~/.p10k.zsh.bak
+[ -f ~/.p10k.zsh ] && mv ~/.p10k.zsh ~/.p10k.zsh.bak
 
 # Create symbolic link
-ln -s ~/repos/jorge-aranda/my-terminal/.p10k.zsh ~/.p10k.zsh
+ln -sf ~/repos/jorge-aranda/my-terminal/.p10k.zsh ~/.p10k.zsh
 
 # Create symbolic link for compatibility mode (optional but recommended)
-ln -s ~/repos/jorge-aranda/my-terminal/.p10k.compatible-mode.zsh ~/.p10k.compatible-mode.zsh
+ln -sf ~/repos/jorge-aranda/my-terminal/.p10k.compatible-mode.zsh ~/.p10k.compatible-mode.zsh
 
 # Create symbolic link for emoji-based compatibility mode (optional)
-ln -s ~/repos/jorge-aranda/my-terminal/.p10k.enable-compatible-mode-emojis.zsh ~/.p10k.enable-compatible-mode-emojis.zsh
+ln -sf ~/repos/jorge-aranda/my-terminal/.p10k.enable-compatible-mode-emojis.zsh ~/.p10k.enable-compatible-mode-emojis.zsh
 ```
 
 #### Neovim Configuration (`init.lua`)
@@ -119,10 +122,10 @@ ln -s ~/repos/jorge-aranda/my-terminal/.p10k.enable-compatible-mode-emojis.zsh ~
 mkdir -p ~/.config/nvim
 
 # Backup existing init.lua if it exists
-mv ~/.config/nvim/init.lua ~/.config/nvim/init.lua.bak
+[ -f ~/.config/nvim/init.lua ] && mv ~/.config/nvim/init.lua ~/.config/nvim/init.lua.bak
 
 # Create symbolic link
-ln -s ~/repos/jorge-aranda/my-terminal/.config/nvim/init.lua ~/.config/nvim/init.lua
+ln -sf ~/repos/jorge-aranda/my-terminal/.config/nvim/init.lua ~/.config/nvim/init.lua
 ```
 
 ## Features
