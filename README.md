@@ -25,8 +25,8 @@ To use these configurations, you need to create symbolic links from this reposit
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/jorge-aranda/my-terminal.git ~/repos/jorge-aranda/my-terminal
-cd ~/repos/jorge-aranda/my-terminal
+git clone https://github.com/NyxellApp/my-terminal.git ~/repos/NyxellApp/my-terminal
+cd ~/repos/NyxellApp/my-terminal
 ```
 
 ### 2. Create Symbolic Links
@@ -42,7 +42,7 @@ Link the configuration file:
 [ -f ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.bak
 
 # Create symbolic link
-ln -sf ~/repos/jorge-aranda/my-terminal/.zshrc ~/.zshrc
+ln -sf ~/repos/NyxellApp/my-terminal/.zshrc ~/.zshrc
 ```
 
 #### Oh My Zsh Configuration
@@ -106,13 +106,13 @@ Then, link the configuration file:
 [ -f ~/.p10k.zsh ] && mv ~/.p10k.zsh ~/.p10k.zsh.bak
 
 # Create symbolic link
-ln -sf ~/repos/jorge-aranda/my-terminal/.p10k.zsh ~/.p10k.zsh
+ln -sf ~/repos/NyxellApp/my-terminal/.p10k.zsh ~/.p10k.zsh
 
 # Create symbolic link for compatibility mode (optional but recommended)
-ln -sf ~/repos/jorge-aranda/my-terminal/.p10k.compatible-mode.zsh ~/.p10k.compatible-mode.zsh
+ln -sf ~/repos/NyxellApp/my-terminal/.p10k.compatible-mode.zsh ~/.p10k.compatible-mode.zsh
 
 # Create symbolic link for emoji-based compatibility mode (optional)
-ln -sf ~/repos/jorge-aranda/my-terminal/.p10k.enable-compatible-mode-emojis.zsh ~/.p10k.enable-compatible-mode-emojis.zsh
+ln -sf ~/repos/NyxellApp/my-terminal/.p10k.enable-compatible-mode-emojis.zsh ~/.p10k.enable-compatible-mode-emojis.zsh
 ```
 
 #### Neovim Configuration (`init.lua`)
@@ -125,7 +125,7 @@ mkdir -p ~/.config/nvim
 [ -f ~/.config/nvim/init.lua ] && mv ~/.config/nvim/init.lua ~/.config/nvim/init.lua.bak
 
 # Create symbolic link
-ln -sf ~/repos/jorge-aranda/my-terminal/.config/nvim/init.lua ~/.config/nvim/init.lua
+ln -sf ~/repos/NyxellApp/my-terminal/.config/nvim/init.lua ~/.config/nvim/init.lua
 ```
 
 ## Features
